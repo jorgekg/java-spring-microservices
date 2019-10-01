@@ -48,6 +48,7 @@ public class UserService {
 		} catch (EmailExistsException e) {
 			throw e;
 		}
+		user.setPassword(this.bCryptPasswordEncode.encode(user.getPassword()));
 		user.setCreateAt(new Date());
 		user.setUpdateAt(new Date());
 		return this.userRepository.save(user);
@@ -57,6 +58,10 @@ public class UserService {
 		return this.bCryptPasswordEncode.encode(password);
 	}
 
+	public User getUserLogged() {
+		return this.find(this.authenticated().getId());
+	}
+	
 	public UserSS authenticated() {
 		try {
 			return (UserSS) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

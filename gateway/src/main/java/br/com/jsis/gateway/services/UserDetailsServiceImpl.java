@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.jsis.gateway.exception.UserNotCompanyException;
 import br.com.jsis.gateway.models.User;
 import br.com.jsis.gateway.models.enums.Perfil;
 import br.com.jsis.gateway.security.UserSS;
@@ -25,9 +24,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		User user = this.service.findEmail(email);
 		if (user == null) {
 			throw new UsernameNotFoundException(email);
-		}
-		if (user.getCompanyId() == null) {
-			throw new UserNotCompanyException();
 		}
 		List<Perfil> perfis = new ArrayList<>();
 		perfis.add(Perfil.ADMIN);

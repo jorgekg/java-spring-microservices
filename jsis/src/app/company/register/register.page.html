@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-title>{{isNew() ? 'Criar' : 'Atualizar'}} sua empresa</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="company"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="row" style="height: 100%">
+    <div class="col-md-12 d-flex">
+      <div class="align-self-center mr-auto" style="width: 100%">
+        <form class="col-md-8 offset-md-2 row">
+          <ion-item class="col-md-6">
+            <ion-label position="floating">Digite nome fantasia</ion-label>
+            <ion-input formControlName1="email" type="email" name="email"></ion-input>
+          </ion-item>
+          <ion-item class="col-md-6">
+            <ion-label position="floating">Digite a razão social</ion-label>
+            <ion-input formControlName1="password" type="password" name="password"></ion-input>
+          </ion-item>
+          <br>
+          <div class="col-md-4 offset-md-4">
+            <br>
+            <ion-button (click)="login()" type="submit" expand="block" color="primary">{{btnCompany}}</ion-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

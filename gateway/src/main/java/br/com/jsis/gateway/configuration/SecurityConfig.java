@@ -40,9 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Inject
 	private InterceptorService interceptorService;
 
-	private static final String[] PUBLIC_MATCHERS = { "/application/users", "/actuator", "/actuator/prometheus" };
+	private static final String[] PUBLIC_MATCHERS = { "/actuator", "/actuator/prometheus" };
 
-	private static final String[] PUBLIC_MATCHERS_POST = { "/application/users" };
+	private static final String[] PUBLIC_MATCHERS_POST = { "/users" };
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

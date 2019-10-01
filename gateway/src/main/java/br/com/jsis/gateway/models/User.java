@@ -21,7 +21,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	@NotEmpty(message = "E-mail is required")
@@ -31,6 +31,10 @@ public class User implements Serializable {
 	@NotEmpty(message = "Password is required")
 	@NotNull(message = "Password is required")
 	private String password;
+	
+	@NotEmpty(message = "Document is required")
+	@NotNull(message = "Document is required")
+	private String document;
 	
 	private Integer companyId;
 	private Date createAt;
