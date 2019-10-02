@@ -41,7 +41,6 @@ public class Company implements Serializable {
 	@NotEmpty(message = "Social name is required")
 	private String socialName;
 	
-	@Column(nullable = true)
 	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Company company;
 	

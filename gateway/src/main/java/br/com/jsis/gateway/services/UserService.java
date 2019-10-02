@@ -53,6 +53,12 @@ public class UserService {
 		user.setUpdateAt(new Date());
 		return this.userRepository.save(user);
 	}
+	
+	public User updateCompany(User user) {
+		User userFinded = this.find(user.getId());
+		userFinded.setCompanyId(user.getCompanyId());
+		return this.userRepository.save(userFinded);
+	}
 
 	public String toCrypt(String password) {
 		return this.bCryptPasswordEncode.encode(password);

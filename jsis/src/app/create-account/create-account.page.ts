@@ -49,6 +49,8 @@ export class CreateAccountPage implements OnInit {
       } catch (err) {
         this.appErrors.showError(err);
       }
+    } else {
+      this.formGroup.markAllAsTouched();
     }
     this.btnLogin = 'Vamos lá';
     this.formGroup.enable();

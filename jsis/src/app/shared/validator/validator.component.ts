@@ -7,13 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ValidatorComponent {
 
-  @Input() form;
-  @Input() field;
+  @Input() control;
 
   constructor() { }
 
   public getMessage() {
-    
+    if (this.control && this.control.errors && this.control.errors.required && this.control.touched) {
+      return 'Este campo é obrigatório.'
+    }
   }
 
 }

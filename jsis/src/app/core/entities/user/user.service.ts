@@ -30,4 +30,5 @@ export class User {
   email: string;
   document?: string;
   password: string;
+  companyId?: number;
 }

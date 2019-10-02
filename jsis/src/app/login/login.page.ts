@@ -40,8 +40,14 @@ export class LoginPage implements OnInit {
         this.router.navigate(['/home']);
         this.formGroup.reset();
       } catch (err) {
-        this.appErrors.showError(err);
+        if (err.status === 401) {
+          await this.appErrors.showMessageError('Usuário ou senha não encontrados', 'danger');
+        } else {
+          this.appErrors.showError(err);
+        }
       }
+    } else {
+      this.formGroup.markAllAsTouched();
     }
     this.formGroup.enable();
     this.btnLogin = 'Acessar';

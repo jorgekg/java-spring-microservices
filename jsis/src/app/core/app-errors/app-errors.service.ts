@@ -12,6 +12,22 @@ export class AppErrorsService {
     private router: Router
   ) { }
 
+  public async showMessageError(message, color) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 5000,
+      color: color,
+      position: 'top',
+      buttons: [
+        {
+          text: 'Ok',
+          role: 'cancel'
+        }
+      ]
+    });
+    toast.present();
+  }
+
   public async showError(err) {
     let message = 'Ocorreu um erro, tente novamente mais tarde!';
     let color = 'danger';
@@ -23,7 +39,7 @@ export class AppErrorsService {
     }
     if (err && err.status === 403) {
       message = 'Sua sessão não é mais válida!';
-      color = 'danger';  
+      color = 'danger';
       this.router.navigate(['/login']);
       localStorage.clear();
     }

@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login.page';
-import { SharedModule } from '../shared/shared.module';
+import { CompanyPage } from './company.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage
+    component: CompanyPage
   }
 ];
 
@@ -20,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    ReactiveFormsModule,
-    SharedModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [LoginPage]
+  declarations: [CompanyPage]
 })
-export class LoginPageModule {}
+export class CompanyPageModule {}

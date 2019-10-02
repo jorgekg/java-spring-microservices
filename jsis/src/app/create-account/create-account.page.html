@@ -9,18 +9,22 @@
             <ion-label position="floating">Digite seu nome</ion-label>
             <ion-input formControlName="name" type="text" name="name"></ion-input>
           </ion-item>
+          <app-validator [control]="formGroup.get('name')"></app-validator>
           <ion-item>
             <ion-label position="floating">Digite seu E-mail</ion-label>
             <ion-input formControlName="email" type="email" name="email"></ion-input>
           </ion-item>
+          <app-validator [control]="formGroup.get('email')"></app-validator>
           <ion-item>
             <ion-label position="floating">Digite seu CPF</ion-label>
             <ion-input formControlName="document" type="text" name="document"></ion-input>
           </ion-item>
+          <app-validator [control]="formGroup.get('document')"></app-validator>
           <ion-item>
             <ion-label position="floating">Digite sua senha</ion-label>
             <ion-input formControlName="password" type="password" name="password"></ion-input>
           </ion-item>
+          <app-validator [control]="formGroup.get('password')"></app-validator>
           <br>
           <div class="col-md-8 offset-md-2">
             <ion-button (click)="save()" type="submit" expand="block" color="primary">{{btnLogin}}</ion-button>

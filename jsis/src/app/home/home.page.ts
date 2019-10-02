@@ -17,7 +17,7 @@ export class HomePage {
   ionViewWillEnter() {
     const user = this.appStorageService.getUser();
     // if (user && !user.id) {
-      this.router.navigate(['company/register'])
+      this.router.navigate(['company/register/new'])
     // }
   }
 
